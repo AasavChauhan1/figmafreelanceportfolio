@@ -1,0 +1,818 @@
+// This website is configured with Bootstrap SCSS
+// Imports and Variables ***********************************************
+
+// Fonts Imported here
+@font-face {
+  font-family: Spartan-Light;
+  src: url("./fonts/Spartan/Spartan-Light.ttf");
+}
+
+@font-face {
+  font-family: Spartan-Regular;
+  src: url("./fonts/Spartan/Spartan-Regular.ttf");
+}
+
+@font-face {
+  font-family: Spartan-SemiBold;
+  src: url("./fonts/Spartan/Spartan-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: Spartan-Bold;
+  src: url("./fonts/Spartan/Spartan-Bold.ttf");
+}
+
+@font-face {
+  font-family: Hind-Regular;
+  src: url("./fonts/Hind/Hind-Regular.ttf");
+}
+
+@font-face {
+  font-family: Hind-Medium;
+  src: url("./fonts/Hind/Hind-Medium.ttf");
+}
+
+$theme-colors: (
+  "primary": #ff6666,
+  "secondary": #336699,
+  "gray0": #111113,
+  "gray1": #212126,
+  "gray2": #6e6d7a,
+  "gray3": #a4a4a4,
+  "gray4": #dedede,
+  "gray5": #f9f9f9,
+);
+
+$enable-rounded: true;
+$enable-shadows: true;
+$enable-gradients: false;
+$enable-transitions: true;
+$enable-prefers-reduced-motion-media-query: true;
+$enable-responsive-font-sizes: true;
+$enable-validation-icons: true;
+$enable-deprecation-messages: true;
+$spacer: 3.333rem;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px,
+  xxl: 1200px,
+);
+
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25,
+  ),
+  2: (
+    $spacer * 0.5,
+  ),
+  3: $spacer,
+  4: (
+    $spacer * 1.5,
+  ),
+  5: (
+    $spacer * 3,
+  ),
+  6: (
+    $spacer * 3.5,
+  ),
+  7: (
+    $spacer * 4,
+  ),
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Imports and Variables ***********************************************
+
+// Global Style ***********************************************
+
+@media (prefers-color-scheme: light) {
+  html,
+  body {
+    color: #000000;
+    background-color: #ffffff;
+  }
+  .Footer {
+    background-color: map-get($theme-colors, "gray5");
+  }
+  .Footer_paragraph {
+    color: map-get($theme-colors, "gray2");
+  }
+  .Link_underline_footer {
+    color: map-get($theme-colors, "gray2");
+  }
+  .Link_underline_paragraph {
+    color: map-get($theme-colors, "primary");
+  }
+  .Link_underline_paragraph:hover {
+    color: map-get($theme-colors, "secondary");
+  }
+  a {
+    color: map-get($theme-colors, "gray1");
+  }
+  a:hover {
+    color: map-get($theme-colors, "primary");
+  }
+  .nav-link {
+    color: map-get($theme-colors, "secondary");
+  }
+  .nav-link_number {
+    color: map-get($theme-colors, "primary");
+  }
+  .nav-link:hover {
+    color: map-get($theme-colors, "primary");
+  }
+  .form-control {
+    background-color: map-get($theme-colors, "gray5");
+    color: map-get($theme-colors, "gray1");
+  }
+  .form-control:focus {
+    background-color: #ffffff;
+    color: map-get($theme-colors, "gray1");
+    border: 1px solid map-get($theme-colors, "secondary");
+  }
+  p {
+    color: map-get($theme-colors, "gray2");
+  }
+  input,
+  .form-control {
+    border: 1px solid map-get($theme-colors, "gray4");
+  }
+  .Portfolio_Link {
+    background-color: none;
+  }
+  .Portfolio_Link:hover {
+    background-color: map-get($theme-colors, "gray5");
+  }
+  h1 {
+    color: map-get($theme-colors, "gray1");
+  }
+  h2 {
+    color: map-get($theme-colors, "gray1");
+  }
+  h3 {
+    color: map-get($theme-colors, "gray1");
+  }
+  h4 {
+    color: map-get($theme-colors, "gray1");
+  }
+  .Text_S {
+    color: map-get($theme-colors, "gray2");
+  }
+  .Text_paragraph {
+    color: map-get($theme-colors, "gray1");
+  }
+  .Portrait {
+    filter: brightness(100%);
+  }
+  .SocialIcon:hover {
+    filter: brightness(10%);
+  }
+  .Narendra_photo {
+    background-image: url(~/assets/images/narendra-designer.png);
+  }
+  .Navbar {
+    background-color: #ffffff;
+  }
+  .modal-content {
+    background-color: map-get($theme-colors, "gray5");
+  }
+  .btn-close {
+    background-color: map-get($theme-colors, "gray5");
+  }
+  .modal .list-group-item {
+    background-color: map-get($theme-colors, "gray5");
+  }
+  .modal-header,
+  .modal-footer,
+  .list-group-item {
+    border-color: map-get($theme-colors, "gray4");
+  }
+  .Portfolio_Link img {
+    filter: invert(0);
+  }
+  .About_Highlight  img {
+    filter: invert(0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    color: #ffffff;
+    background-color: #000000;
+  }
+  .Footer {
+    background-color: map-get($theme-colors, "gray0");
+  }
+  .Footer_paragraph {
+    color: map-get($theme-colors, "gray3");
+  }
+  .Link_underline_footer {
+    color: map-get($theme-colors, "secondary");
+  }
+  .Link_underline_paragraph {
+    color: map-get($theme-colors, "secondary");
+  }
+  .Link_underline_paragraph:hover {
+    color: map-get($theme-colors, "primary");
+  }
+  a {
+    color: map-get($theme-colors, "gray4");
+  }
+  a:hover {
+    color: map-get($theme-colors, "primary");
+  }
+  .nav-link {
+    color: map-get($theme-colors, "primary");
+  }
+  .nav-link_number {
+    color: map-get($theme-colors, "secondary");
+  }
+  .nav-link:hover {
+    color: map-get($theme-colors, "secondary");
+  }
+  .form-control {
+    background-color: map-get($theme-colors, "gray1");
+    color: map-get($theme-colors, "gray5");
+  }
+  .form-control:focus {
+    background-color: map-get($theme-colors, "gray1");
+    color: map-get($theme-colors, "gray5");
+    border: 1px solid map-get($theme-colors, "gray2");
+  }
+  p {
+    color: map-get($theme-colors, "gray3");
+  }
+  input,
+  .form-control {
+    border: 1px solid map-get($theme-colors, "gray1");
+  }
+  .Portfolio_Link {
+    background-color: none;
+  }
+  .Portfolio_Link:hover {
+    background-color: map-get($theme-colors, "gray1");
+  }
+  h1 {
+    color: map-get($theme-colors, "gray5");
+  }
+  h2 {
+    color: map-get($theme-colors, "gray5");
+  }
+  h3 {
+    color: map-get($theme-colors, "gray5");
+  }
+  h4 {
+    color: map-get($theme-colors, "gray5");
+  }
+  .Text_S {
+    color: map-get($theme-colors, "gray2");
+  }
+  .Text_paragraph {
+    color: map-get($theme-colors, "gray4");
+  }
+  .Portrait {
+    filter: brightness(70%);
+  }
+  .SocialIcon:hover {
+    filter: brightness(80%);
+  }
+  .Narendra_photo {
+    background-image: url(~/assets/images/darkframe_narendra-designer.png);
+  }
+  .Navbar {
+    background-color: #000000;
+  }
+  .modal-content {
+    background-color: map-get($theme-colors, "gray1");
+  }
+  .btn-close {
+    background-color: map-get($theme-colors, "gray1");
+  }
+  .modal .list-group-item {
+    background-color: map-get($theme-colors, "gray0");
+  }
+  .modal-header,
+  .modal-footer,
+  .list-group-item {
+    border-color: map-get($theme-colors, "gray2");
+  }
+  .Portfolio_Link img {
+    filter: invert(1);
+  }
+  .About_Highlight  img {
+    filter: invert(1);
+  }
+}
+
+.Narendra_photo {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  min-height: 254px;
+  background-position: center;
+}
+
+.Navbar {
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+}
+.Navbar_child {
+  display: flex;
+  align-items: center;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  font-family: Spartan-SemiBold;
+  text-decoration: none;
+}
+
+.btn {
+  font-family: Spartan-SemiBold;
+  box-shadow: none !important;
+}
+
+* {
+  outline: 0 !important;
+}
+
+.Footer_paragraph {
+  font-family: Hind-Regular;
+  line-height: unset;
+}
+
+.Link_underline_footer {
+  font-family: Hind-Regular;
+  line-height: unset;
+  text-decoration: underline;
+}
+
+.Link_underline_paragraph {
+  font-family: Hind-Regular;
+  text-decoration: underline;
+}
+
+.img-fluid {
+  border-radius: 8px;
+}
+
+.MyEmail {
+  font-family: Hind-Medium !important;
+}
+
+input,
+.form-control {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.Portfolio_Link {
+  border-radius: 10px;
+}
+
+.Portfolio_Link img {
+  height: auto;
+  min-height: 20px;
+}
+
+.About_Highlight  img{
+  height: auto;
+  min-height: 20px;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+}
+
+// Global Style ***********************************************
+
+// Extra Large Desktop Style ***********************************************
+
+@include media-breakpoint-up(xl) {
+  h1 {
+    font-family: Spartan-SemiBold;
+    font-size: 30px;
+    line-height: 54px;
+  }
+
+  h2 {
+    font-family: Spartan-Bold;
+    font-size: 28px;
+    line-height: unset;
+  }
+
+  h3 {
+    font-family: Spartan-SemiBold;
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  h4 {
+    font-family: Spartan-SemiBold;
+    font-size: 24px;
+    line-height: unset;
+  }
+
+  .Text_L {
+    font-family: Spartan-SemiBold;
+    font-size: 22px;
+    line-height: unset;
+  }
+
+  .Text_M {
+    font-family: Hind-Regular;
+    font-size: 20px;
+    line-height: unset;
+  }
+
+  .Text_S {
+    font-family: Hind-Medium;
+    font-size: 18px;
+    line-height: unset;
+  }
+
+  .nav-link {
+    font-family: Spartan-SemiBold;
+    font-size: 20px;
+    line-height: unset;
+  }
+
+  .btn {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 19px;
+    padding-left: 19px;
+    font-size: 20px;
+  }
+
+  .Logo {
+    height: 50px;
+  }
+
+  .Footer_paragraph {
+    font-size: 20px;
+  }
+
+  .Link_underline_footer {
+    font-size: 20px;
+  }
+
+  input,
+  .form-control {
+    min-height: 52px;
+    font-family: Hind-Regular;
+    font-size: 20px;
+    padding: 12px 20px;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .textarea {
+    max-height: 140px;
+  }
+
+  .ServiceIcon {
+    height: 65px;
+  }
+
+  .Certificate {
+    height: 40px;
+  }
+  .Navbar_child {
+    overflow-x: hidden;
+  }
+}
+
+// Extra Large Desktop Style ***********************************************
+
+// Desktop Style ***********************************************
+
+@include media-breakpoint-down(xl) {
+  h1 {
+    font-family: Spartan-SemiBold;
+    font-size: 30px;
+    line-height: 54px;
+  }
+
+  h2 {
+    font-family: Spartan-Bold;
+    font-size: 28px;
+    line-height: unset;
+  }
+
+  h3 {
+    font-family: Spartan-SemiBold;
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  h4 {
+    font-family: Spartan-SemiBold;
+    font-size: 24px;
+    line-height: unset;
+  }
+
+  .Text_L {
+    font-family: Spartan-SemiBold;
+    font-size: 22px;
+    line-height: unset;
+  }
+
+  .Text_M {
+    font-family: Hind-Regular;
+    font-size: 20px;
+    line-height: unset;
+  }
+
+  .Text_S {
+    font-family: Hind-Medium;
+    font-size: 18px;
+    line-height: unset;
+  }
+
+  .nav-link {
+    font-family: Spartan-SemiBold;
+    font-size: 20px;
+    line-height: unset;
+  }
+
+  .btn {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 19px;
+    padding-left: 19px;
+    font-size: 20px;
+  }
+
+  .Logo {
+    height: 50px;
+  }
+
+  .Footer_paragraph {
+    font-size: 20px;
+  }
+
+  .Link_underline_footer {
+    font-size: 20px;
+  }
+
+  input,
+  .form-control {
+    min-height: 52px;
+    font-family: Hind-Regular;
+    font-size: 20px;
+    padding: 12px 20px;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .textarea {
+    max-height: 140px;
+  }
+
+  .ServiceIcon {
+    height: 65px;
+  }
+
+  .Certificate {
+    height: 40px;
+  }
+  .Navbar_child {
+    overflow-x: hidden;
+  }
+}
+
+// Desktop Style ***********************************************
+
+// Tablet Style ***********************************************
+
+@include media-breakpoint-down(md) {
+  h1 {
+    font-family: Spartan-SemiBold;
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-family: Spartan-Bold;
+    font-size: 26px;
+    line-height: unset;
+  }
+
+  h3 {
+    font-family: Spartan-SemiBold;
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  h4 {
+    font-family: Spartan-SemiBold;
+    font-size: 22px;
+    line-height: unset;
+  }
+
+  .Text_L {
+    font-family: Spartan-SemiBold;
+    font-size: 20px;
+    line-height: unset;
+  }
+
+  .Text_M {
+    font-family: Hind-Regular;
+    font-size: 18px;
+    line-height: unset;
+  }
+
+  .Text_S {
+    font-family: Hind-Medium;
+    font-size: 16px;
+    line-height: unset;
+  }
+
+  .nav-link {
+    font-family: Spartan-SemiBold;
+    font-size: 18px;
+    line-height: unset;
+  }
+
+  .btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 19px;
+    padding-left: 19px;
+    font-size: 18px;
+  }
+
+  .Logo {
+    height: 50px;
+  }
+
+  .Footer_paragraph {
+    font-size: 18px;
+  }
+
+  .Link_underline_footer {
+    font-size: 18px;
+  }
+
+  input,
+  .form-control {
+    min-height: 42px;
+    font-family: Hind-Regular;
+    font-size: 18px;
+    padding: 10px 13px;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .textarea {
+    max-height: 100px;
+  }
+
+  .ServiceIcon {
+    height: 55px;
+  }
+
+  .Certificate {
+    height: 35px;
+  }
+  .Navbar_child {
+    overflow-x: hidden;
+  }
+}
+
+// Tablet Style ***********************************************
+
+// Mobile Style ***********************************************
+
+@include media-breakpoint-down(sm) {
+  .container {
+    padding-left: $spacer * 0.25 !important;
+    padding-right: $spacer * 0.25 !important;
+  }
+
+  h1 {
+    font-family: Spartan-SemiBold;
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-family: Spartan-Bold;
+    font-size: 24px;
+    line-height: unset;
+  }
+
+  h3 {
+    font-family: Spartan-SemiBold;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  h4 {
+    font-family: Spartan-SemiBold;
+    font-size: 20px;
+    line-height: unset;
+  }
+
+  .Text_L {
+    font-family: Spartan-SemiBold;
+    font-size: 18px;
+    line-height: unset;
+  }
+
+  .Text_M {
+    font-family: Hind-Regular;
+    font-size: 16px;
+    line-height: unset;
+  }
+
+  .Text_S {
+    font-family: Hind-Medium;
+    font-size: 14px;
+    line-height: unset;
+  }
+
+  .nav-link {
+    font-family: Spartan-SemiBold;
+    font-size: 16px;
+    line-height: unset;
+  }
+
+  .btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 16px;
+  }
+
+  .Logo {
+    height: 30px;
+  }
+
+  .Footer_paragraph {
+    font-size: 16px;
+  }
+
+  .Link_underline_footer {
+    font-size: 16px;
+  }
+
+  input,
+  .form-control {
+    min-height: 42px;
+    font-family: Hind-Regular;
+    font-size: 16px;
+    padding: 12px 13px;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .textarea {
+    max-height: 90px;
+  }
+
+  .ServiceIcon {
+    height: 45px;
+  }
+
+  .Certificate {
+    height: 25px;
+  }
+  .Navbar_child {
+    overflow-x: scroll;
+  }
+}
+
+// Mobile Style ***********************************************

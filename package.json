@@ -1,0 +1,27 @@
+{
+  "name": "Narendra-Ram",
+  "version": "1.0.0",
+  "description": "Official website of Narendra Ram",
+  "author": "Narendra Ram",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.1",
+    "jquery": "^3.4.1",
+    "node-sass": "^7.0.3",
+    "nuxt": "^2.12.0",
+    "nuxt-cloudflare-analytics": "^0.1.5",
+    "popper.js": "^1.16.1",
+    "sass-loader": "^10.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "push-dir": "^0.4.1"
+  }
+}
